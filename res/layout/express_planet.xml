@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/txt_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text=""
+        android:textSize="20sp" />
+
+    <Spinner
+        android:id="@+id/Spinner01"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_below="@+id/textView1"
+        android:layout_marginTop="20dp" />
+
+    <EditText
+        android:id="@+id/express_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/Spinner01"
+        android:layout_toLeftOf="@+id/btn_search"
+        android:ems="10"
+        android:hint="运单号" >
+
+    </EditText>
+
+            <ListView
+                android:id="@+id/listView1"
+                android:layout_width="wrap_content"
+                android:layout_height="291dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/btn_search" >
+
+            </ListView>
+
+            <Button
+                android:id="@+id/btn_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/express_id"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/Spinner01"
+                android:text="查询" />
+
+</RelativeLayout>
