@@ -16,9 +16,6 @@
 
 package com.exoo.android.navigationdrawerexample;
 
-import com.example.android.navigationdrawerexample.R;
-import com.exoo.android.core.FragmentFactory;
-
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
@@ -28,15 +25,14 @@ import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
+
+import com.exoo.android.core.FragmentFactory;
 
 /**
  * This example illustrates a common usage of the DrawerLayout widget

@@ -1,5 +1,7 @@
 package com.exoo.android.core.express;
 
+import java.util.List;
+
 public class ExpressCom {
 
 	private String ID = "";
@@ -8,6 +10,14 @@ public class ExpressCom {
 	public ExpressCom() {
 		ID = "";
 		Value = "";
+	}
+
+	public void setID(String iD) {
+		ID = iD;
+	}
+
+	public void setValue(String value) {
+		Value = value;
 	}
 
 	public ExpressCom(String _ID, String _Value) {
@@ -28,5 +38,12 @@ public class ExpressCom {
 	public String GetValue() {
 		return Value;
 	}
+	
+	
+	
+	
+	
+	
+	
 
 }
