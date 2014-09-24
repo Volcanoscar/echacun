@@ -4,6 +4,9 @@ import android.app.Fragment;
 
 import com.exoo.android.core.express.ExpressFragment;
 import com.exoo.android.core.home.HomeFragment;
+import com.exoo.android.core.idcard.IdCardFragment;
+import com.exoo.android.core.ip.IpFragment;
+import com.exoo.android.core.mobile.MobileFragment;
 
 public class FragmentFactory {
     public static Fragment getInstanceByIndex(int index) {
@@ -16,13 +19,18 @@ public class FragmentFactory {
                 fragment = new ExpressFragment();
                 break;
             case 2:
-                fragment = new ExpressFragment();
+                fragment = new IpFragment();
                 break;
             case 3:
-                fragment = new ExpressFragment();
+                fragment = new MobileFragment();
                 break;
+            case 4:
+                fragment = new IdCardFragment();
+                break;
+            
+            	
            
         }
         return fragment;
-    }
+    }//
 }

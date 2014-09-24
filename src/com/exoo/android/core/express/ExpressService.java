@@ -8,12 +8,14 @@ import java.util.Map;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import android.content.Context;
 import android.util.Log;
-import android.widget.SimpleAdapter;
 
 import com.exoo.android.core.RetreiveWifiTask;
+import com.exoo.android.navigationdrawerexample.R;
 
 public class ExpressService {
+	 
 
 	/**
 	 * 通过订单号跟物流商代码查询改订单的物流信息
@@ -21,9 +23,9 @@ public class ExpressService {
 	 * @param exp_com
 	 * @return List<Map<String, Object>> 结构数据
 	 */
-	public List<Map<String, Object>> GetExpressData(String exp_id,String exp_com) {
+	public List<Map<String, Object>> GetExpressData(String url) {
 
-		String url = "http://api.36wu.com/Express/GetExpressInfo?postid="+ exp_id + "&com="+exp_com+"&output=json";
+		//String url = "http://api.36wu.com/Express/GetExpressInfo?postid="+ exp_id + "&com="+exp_com+"&output=json";
 		
 		RetreiveWifiTask sa = new RetreiveWifiTask();
 		List<Map<String, Object>> data = new ArrayList<Map<String, Object>>();

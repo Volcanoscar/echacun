@@ -12,8 +12,16 @@
         android:text=""
         android:textSize="20sp" />
 
+    <Spinner
+        android:id="@+id/Spinner01"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_below="@+id/textView1"
+        android:layout_marginTop="20dp" />
+
     <EditText
-        android:id="@+id/express_id"
+        android:id="@+id/idcard_number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
@@ -39,16 +47,9 @@
                 android:id="@+id/btn_search"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignBottom="@+id/express_id"
+                android:layout_alignBottom="@+id/idcard_number"
                 android:layout_alignParentRight="true"
                 android:layout_below="@+id/Spinner01"
                 android:text="查询" />
-
-            <Spinner
-                android:id="@+id/Spinner01"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true" />
 
 </RelativeLayout>

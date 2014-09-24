@@ -43,7 +43,7 @@ public class ExpressFragment extends Fragment {
 		int i = getArguments().getInt("planet_number");
 		String planet = getResources().getStringArray(R.array.planets_array)[i];
 
-		express_id = (EditText) rootView.findViewById(R.id.express_id);
+		express_id = (EditText) rootView.findViewById(R.id.idcard_number);
 		btn_search = (Button) rootView.findViewById(R.id.btn_search);
 		listView = (ListView) rootView.findViewById(R.id.listView1);
 
@@ -85,9 +85,10 @@ public class ExpressFragment extends Fragment {
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				String exp_id = express_id.getText().toString();
+				//?postid="+ exp_id + "&com="+exp_com+"&
+				String url = getResources().getString(R.string.express_url)+"&postid="+exp_id+"&com="+exp_com;
 				
-				
-				 List<Map<String, Object>> data = new ExpressService().GetExpressData(exp_id,exp_com);
+				 List<Map<String, Object>> data = new ExpressService().GetExpressData(url);
 				SimpleAdapter adapter = new SimpleAdapter(getActivity(),
 						data, android.R.layout.simple_list_item_2,
 						new String[] { "title", "info" }, new int[] {

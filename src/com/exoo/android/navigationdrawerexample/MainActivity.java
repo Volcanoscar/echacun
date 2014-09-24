@@ -76,9 +76,9 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         mTitle = mDrawerTitle = getTitle();
-        mPlanetTitles = getResources().getStringArray(R.array.planets_array);
-        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-        mDrawerList = (ListView) findViewById(R.id.left_drawer);
+        mPlanetTitles = getResources().getStringArray(R.array.planets_array); //侧边栏的标题
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout); //布局
+        mDrawerList = (ListView) findViewById(R.id.left_drawer);  //list view 
 
         // set a custom shadow that overlays the main content when the drawer opens
         mDrawerLayout.setDrawerShadow(R.drawable.drawer_shadow, GravityCompat.START);
@@ -128,8 +128,8 @@ public class MainActivity extends Activity {
     @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
         // If the nav drawer is open, hide action items related to the content view
-        boolean drawerOpen = mDrawerLayout.isDrawerOpen(mDrawerList);
-        menu.findItem(R.id.action_websearch).setVisible(!drawerOpen);
+//        boolean drawerOpen = mDrawerLayout.isDrawerOpen(mDrawerList);
+        menu.findItem(R.id.action_websearch).setVisible(false);
         return super.onPrepareOptionsMenu(menu);
     }
  
@@ -138,9 +138,7 @@ public class MainActivity extends Activity {
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
             selectItem(position);
-//            Intent intent = new Intent();
-//        	intent.setClass(MainActivity.this, ExpressActivity.class);
-//        	startActivity(intent);
+ 
         	
         	
         	
@@ -190,37 +188,4 @@ public class MainActivity extends Activity {
         // Pass any configuration change to the drawer toggls
         mDrawerToggle.onConfigurationChanged(newConfig);
     }
-
-//    /**
-//     * Fragment that appears in the "content_frame", shows a planet
-//     */
-//    public static abstract class PlanetFragment extends Fragment {
-//        public static final String ARG_PLANET_NUMBER = "planet_number";
-//
-//        public PlanetFragment() {
-//            // Empty constructor required for fragment subclasses
-//        }
-//        
-//       
-//        @Override
-//        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-//                Bundle savedInstanceState) {
-//        	 
-//            View rootView = inflater.inflate(R.layout.express_planet, container, false);
-//            
-//            int i = getArguments().getInt(ARG_PLANET_NUMBER);
-//            String planet = getResources().getStringArray(R.array.planets_array)[i];
-//           
-//           // int imageId = getResources().getIdentifier(planet.toLowerCase(Locale.getDefault()),
-//                           // "drawable", getActivity().getPackageName());
-//           // ((ImageView) rootView.findViewById(R.id.image)).setImageResource(imageId);
-//            TextView textView = (TextView) rootView.findViewById(R.id.txt_content);  
-//            textView.setText(planet);  
-//            Log.d("Nav", planet);
-//      
-//
-//            return rootView;
-//        }
-//        public abstract String initContent();  
-//    }
 }
