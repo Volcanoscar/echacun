@@ -58,10 +58,14 @@
     </string-array>
 
     <!-- URL -->
-    <string name="mobile_url"><![CDATA["http://api.36wu.com/Mobile/GetMobileOwnership?output=json&authkey=fa8764c43b9f4f83aa65f6dcebe23683"]]></string>
-    <string name="express_url"><![CDATA["http://api.36wu.com/Express/GetExpressInfo?output=json&authkey=fa8764c43b9f4f83aa65f6dcebe23683"]]></string>
-    <string name="ip_url"><![CDATA["http://api.36wu.com/Ip/GetIpInfo?output=json&authkey=fa8764c43b9f4f83aa65f6dcebe23683"]]></string>
-    <string name="idcard_url"><![CDATA["http://api.36wu.com/IdCard/GetIdCardInfo?output=json&authkey=fa8764c43b9f4f83aa65f6dcebe23683"]]></string>
+    <string name="mobile_url"><![CDATA["http://api.36wu.com/Mobile/GetMobileOwnership"]]></string>
+    <string name="express_url"><![CDATA["http://api.36wu.com/Express/GetExpressInfo"]]></string>
+    <string name="express_com_url"><![CDATA["http://api.36wu.com/Express/GetExpressCom"]]></string>
+    <string name="ip_url"><![CDATA["http://api.36wu.com/Ip/GetIpInfo"]]></string>
+    <string name="idcard_url"><![CDATA["http://api.36wu.com/IdCard/GetIdCardInfo"]]></string>
+    <string name="authkey_url"><![CDATA["http://api.e-xoo.com/index.php"]]></string>
+    <string name="api_36wu_authkey_error">AUTHKEY异常，请联系作者</string>
+    <string name="error_title">错误提示</string>
     <string name="drawer_open">Open navigation drawer</string>
     <string name="drawer_close">Close navigation drawer</string>
     <string name="action_websearch">Web search</string>

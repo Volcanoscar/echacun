@@ -19,6 +19,7 @@ package com.exoo.android.navigationdrawerexample;
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
@@ -32,6 +33,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.exoo.android.common.Common;
 import com.exoo.android.core.FragmentFactory;
 
 /**
@@ -87,6 +89,11 @@ public class MainActivity extends Activity {
                 R.layout.drawer_list_item, mPlanetTitles));
         mDrawerList.setOnItemClickListener(new DrawerItemClickListener());
 
+        /**
+         * 初始化
+         */
+        Common.context = getApplicationContext();
+        
         // enable ActionBar app icon to behave as action to toggle nav drawer
         getActionBar().setDisplayHomeAsUpEnabled(true);
         getActionBar().setHomeButtonEnabled(true);
@@ -112,6 +119,8 @@ public class MainActivity extends Activity {
         };
         mDrawerLayout.setDrawerListener(mDrawerToggle);
 
+        
+        
         if (savedInstanceState == null) {
             selectItem(0);
         }
@@ -153,9 +162,12 @@ public class MainActivity extends Activity {
         Bundle args = new Bundle();
         args.putInt("planet_number", position);
         fragment.setArguments(args);
-
-        FragmentManager fragmentManager = getFragmentManager();
-        fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).commit();
+ 
+        FragmentTransaction ft = getFragmentManager().beginTransaction(); 
+        
+        ft.setCustomAnimations(android.R.animator.fade_in,android.R.animator.fade_out); 
+        
+        ft.replace(R.id.content_frame, fragment).commit();
 
         // update selected item and title, then close the drawer
         mDrawerList.setItemChecked(position, true);

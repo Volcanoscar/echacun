@@ -4,27 +4,28 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.TreeMap;
 
 import org.json.JSONObject;
 
-import android.content.Context;
 import android.util.Log;
 
+import com.exoo.android.common.APIURL;
+import com.exoo.android.common.Common;
 import com.exoo.android.core.RetreiveWifiTask;
+import com.exoo.android.core.express.ExpressData;
 import com.exoo.android.navigationdrawerexample.R;
 
 public class IdCardService {
  
  
 	/**
-	 * 通过手机号码查询手机号信心
+	 * 通过身份证号查
 	 * @param mobile_number 手机号
 	 * @return List<Map<String, Object>> 结构数据
 	 */
-	public List<Map<String,String>> GetIdCardData(String url) {
+	public List<Map<String,String>> GetIdCardData(String idcardnumber) {
 	 
-		 
+		 String url = new APIURL().getIdCardURL(idcardnumber);
 		
 		
 		  List<Map<String,String>> data = new ArrayList<Map<String,String>>();
@@ -83,27 +84,20 @@ public class IdCardService {
 					  map.put("title",jsonchild.getString("address"));
 					  map.put("info","所在地区");
 					  data.add(map);
-					  
-					 
-					 
-						 
-					
-				 
-//					map.put("省份：",jsonchild.getString("province"));
-//					map.put("城市：",jsonchild.getString("city"));
-//					map.put("城市区号：",jsonchild.getString("areaCode"));
-//					map.put("城市邮编：",jsonchild.getString("postCode"));
-//					map.put("运营商：",jsonchild.getString("corp"));
-//					map.put("卡类型：",jsonchild.getString("card"));
-//					data.add(map);
+				} else if (status.equals("401")) {
+					 map = new HashMap<String, String>();
+						map.put("title",Common.context.getResources().getString(
+								R.string.api_36wu_authkey_error));
+						map.put("info", Common.context.getResources()
+								.getString(R.string.error_title));
+						data.add(map);
 				} else {
 					 map = new HashMap<String, String>();
-					map.put("title",message);
-					map.put("info", "请求错误");
-					data.add(map);
-					//data.add("请求错误："+message);
-				}
-
+						map.put("title",message);
+						map.put("info", Common.context.getResources()
+								.getString(R.string.error_title));
+						data.add(map);
+				} 
 				 
 
 				// getActivity().setContentView(listView);

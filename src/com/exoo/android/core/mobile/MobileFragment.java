@@ -46,8 +46,8 @@ public class MobileFragment extends Fragment {
 //						.GetMobileData(mobile_number);
 //				
 //				ArrayAdapter<String> adapter = new ArrayAdapter(getActivity(),android.R.layout.simple_list_item_1,data);
-				 String url = getResources().getString(R.string.mobile_url)+"&mobile="+mobile_number;
-				List<Map<String, String>> data = mobileservice.GetMobileData(url);
+//				 String url = getResources().getString(R.string.mobile_url)+"&mobile="+mobile_number;
+				List<Map<String, String>> data = mobileservice.GetMobileData(mobile_number);
 					SimpleAdapter adapter = new SimpleAdapter(getActivity(),
 							data, android.R.layout.simple_list_item_2,
 							new String[] { "title", "info" }, new int[] {

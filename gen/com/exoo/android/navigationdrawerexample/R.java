@@ -69,14 +69,18 @@ public final class R {
         public static final int main=0x7f060000;
     }
     public static final class string {
-        public static final int action_websearch=0x7f040008;
+        public static final int action_websearch=0x7f04000c;
+        public static final int api_36wu_authkey_error=0x7f040008;
         public static final int app_name=0x7f040000;
-        public static final int app_not_available=0x7f040009;
-        public static final int drawer_close=0x7f040007;
-        public static final int drawer_open=0x7f040006;
+        public static final int app_not_available=0x7f04000d;
+        public static final int authkey_url=0x7f040007;
+        public static final int drawer_close=0x7f04000b;
+        public static final int drawer_open=0x7f04000a;
+        public static final int error_title=0x7f040009;
+        public static final int express_com_url=0x7f040004;
         public static final int express_url=0x7f040003;
-        public static final int idcard_url=0x7f040005;
-        public static final int ip_url=0x7f040004;
+        public static final int idcard_url=0x7f040006;
+        public static final int ip_url=0x7f040005;
         /**  URL 
          */
         public static final int mobile_url=0x7f040002;

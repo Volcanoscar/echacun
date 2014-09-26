@@ -47,12 +47,6 @@ public class DBHelper extends SQLiteOpenHelper {
 
 			}
 		}
-
-		// ContentValues values = new ContentValues();
-		// values.put("NeedSleepTime", "120"); //分钟为单位
-		// db.insert(TBL_NAME, "null", values);
-		// values.put("PlayTime", "60"); //分钟为单位
-		// db.insert(TBL_NAME, "null", values);
 	}
 
 	public void insert(ContentValues values) {
